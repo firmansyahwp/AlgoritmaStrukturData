@@ -1,2 +1,2 @@
-# AlgoritmaStrukturData
+# Algoritma Struktur Data
 Brain Challenge
