@@ -3,19 +3,16 @@
 // TEKNIK INFORMATIKA
 // INSTITUT TEKNOLOGI SUMATERA
 // KELAS RB
-// KELOMPOK 20 :
-//				- Yusuf Firmansyah Wiranto P	
-//				- Bayu Winnie Arini N			
-//				- Isbal Faturrohman				
+				
 
 
-#include <stdio.h>							// untuk pembacaan bahasa c
-#include <stdlib.h>							// untuk menggunakan pointer
-#include <time.h>							// untuk menggunakan fungsi random
-#include <windows.h>						// untuk menggunakan waktu dan menghapus layar
-#include <conio.h>							// untuk memberhentikan program sejenak
+#include <stdio.h>								// untuk pembacaan bahasa c
+#include <stdlib.h>								// untuk menggunakan pointer
+#include <time.h>								// untuk menggunakan fungsi random
+#include <windows.h>								// untuk menggunakan waktu dan menghapus layar
+#include <conio.h>								// untuk memberhentikan program sejenak
 
-#define boolean unsigned char				// untuk membuat fungsi pengecekan dengan boolean
+#define boolean unsigned char							// untuk membuat fungsi pengecekan dengan boolean
 #define true 1
 #define false 0
 
@@ -36,15 +33,15 @@ typedef struct{
 #define Next(P) (P)->next
 #define First(L) (L).First
 
-boolean IsEmpty(List L) {										// untuk mengecek isi list kosong atau tidak
+boolean IsEmpty(List L) {							// untuk mengecek isi list kosong atau tidak
     return (First(L)==Nil);						
 }
 
-void CreateEmpty(List *L) {										// untuk membuat list kosong
+void CreateEmpty(List *L) {							// untuk membuat list kosong
     First(*L)=Nil;
 }
 
-address Allocation(infotype X) {								// untuk memesan memori yang ditambahkan ke list
+address Allocation(infotype X) {						// untuk memesan memori yang ditambahkan ke list
     address NodeBaru;
 
     NodeBaru=(address)malloc(sizeof(ElmtList));
@@ -66,7 +63,7 @@ void InsertVFirst(List *L, char x) {
 }
 
 
-char symbolacak() {									// untuk membuat symbol berupa char sebanyak 6 tipe
+char symbolacak() {								// untuk membuat symbol berupa char sebanyak 6 tipe
     char symbol; 
     char n;
     
@@ -89,7 +86,7 @@ char symbolacak() {									// untuk membuat symbol berupa char sebanyak 6 tipe
     return symbol;
 }
 
-int JumlahSkor (List L) {								// untuk menghitung isi total isi list 
+int JumlahSkor (List L) {							// untuk menghitung isi total isi list 
 	int sum = 0;
 	address P;
 
@@ -140,15 +137,15 @@ int main () {
 		printf ("===========================================================================\n\n");
 		
 		printf ("Scene %d : \n\n",n);
-		srand(time(Nil));								// digunakan untuk selalu mengacak symbol yang muncul saat dipanggil
+		srand(time(Nil));						// digunakan untuk selalu mengacak symbol yang muncul saat dipanggil
 	    for(i=15;i!=0;i--)
 	    {
 	        symbol = symbolacak();
 	        
-	        if (symbol=='*') {							// menghitung jumlah bintang yang muncul dengan bantuan variabel j
+	        if (symbol=='*') {						// menghitung jumlah bintang yang muncul dengan bantuan variabel j
 				j++;
 			}
-			b1[n]=j;									// menyalin data dari variabel j ke array b1
+			b1[n]=j;						// menyalin data dari variabel j ke array b1
 	        printf("%c",symbol);
 	    }
 	    printf ("\n\n------------------ Remember amaount of '*' for this scene -----------------\n\n ");	 
@@ -165,7 +162,7 @@ int main () {
 		    
 		    printf ("How many '*' for scene %d : ", b2);
 		    scanf ("%d",&a);
-		    if (a==b1[b2]) {							// membuat perbandingan jawaban dengan jumlah bintang yang telah dihiung
+		    if (a==b1[b2]) {						// membuat perbandingan jawaban dengan jumlah bintang yang telah dihitung
 		    	printf ("  TRUE!\n");
 		    	InsertVFirst(&Lskor, 1);				// jawaban akan diberi nilai 1 dan dimasukan ke dalam list
 				printf ("\n");
